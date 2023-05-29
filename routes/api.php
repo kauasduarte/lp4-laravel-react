@@ -22,16 +22,16 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 //MUDAR TUDO
 //cria uma rota para exibir todos os produtos
-Route::get('/produtos', 'App\Http\Controllers\ProdutoController@index');
+Route::get('/produtos', [Produtos::class, 'index']);
 
 // cria a rota para adicionar novo produto
 Route::post('/produtos', [Produtos::class, 'create']);
 
 //cria a rota para exibir um produto por id
-Route::get('/produtos/{id}', 'App\Http\Controllers\ProdutoController@show');
+Route::get('/produtos/{id}', [Produtos::class, 'show']);
 
 //cria a rota para atualizar o produto por id
-Route::put('/produtos/{id}', 'App\Http\Controllers\ProdutoController@update');
+Route::put('/produtos/{id}', [Produtos::class, 'update']);
 
 //cria a rota para deletar um produto por id
-Route::delete('/produtos/{id}', 'App\Http\Controllers\ProdutoController@destroy');
+Route::delete('/produtos/{id}', [Produtos::class, 'destroy']);

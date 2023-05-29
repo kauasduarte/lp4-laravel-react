@@ -20,11 +20,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//MUDAR TUDO
 //cria uma rota para exibir todos os produtos
 Route::get('/produtos', 'App\Http\Controllers\ProdutoController@index');
 
 // cria a rota para adicionar novo produto
-Route::post('/produtos', 'App\Http\Controllers\ProdutoController@create');
+Route::post('/produtos', [Produtos::class, 'create']);
 
 //cria a rota para exibir um produto por id
 Route::get('/produtos/{id}', 'App\Http\Controllers\ProdutoController@show');

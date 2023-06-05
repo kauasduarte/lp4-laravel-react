@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->string('tipo');
-            $table->float('preco_custo');
-            $table->float('preco_venda');
+            $table->decimal('preco_custo',14,2);
+            $table->decimal('preco_venda',14,2);
             $table->string('lote');
             $table->string('data_aquisicao');
             $table->string('data_venda');
